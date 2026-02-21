@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品详情 · DEMOWALL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="stylesheet" href="css/background-effects.css">
+  <link rel="stylesheet" href="css/theme-minimalist.css">
+  <link rel="stylesheet" href="css/theme-vaporwave.css">
+  <link rel="stylesheet" href="css/theme-organic.css">
+  <link rel="stylesheet" href="css/theme-pixel.css">
+  <link rel="stylesheet" href="css/theme-switcher.css">
+  <link rel="stylesheet" href="css/z-index-system.css">
+</head>
+<body>
+  <!-- Dynamic Background Effects -->
+  <div class="grid-background"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="scanlines"></div>
+  <div class="noise-overlay"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">◈</span>
+        <span class="logo-text">DEMOWALL</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">作品</a>
+        <a href="#" class="nav-link">关于</a>
+        <a href="#" class="nav-link">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Back Button -->
+  <a href="index.html" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    <span>返回作品集</span>
+  </a>
+
+  <!-- Detail Content -->
+  <main class="detail-section">
+    <article class="detail-container" id="detailContent">
+      <!-- Loading State -->
+      <div class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>加载中...</p>
+      </div>
+    </article>
+  </main>
+
+  <!-- Project Navigation -->
+  <nav class="project-nav" id="projectNav">
+    <a href="#" class="project-nav-link prev" id="prevProject">
+      <span class="nav-label">上一个</span>
+      <span class="nav-title" id="prevTitle"></span>
+    </a>
+    <a href="#" class="project-nav-link next" id="nextProject">
+      <span class="nav-label">下一个</span>
+      <span class="nav-title" id="nextTitle"></span>
+    </a>
+  </nav>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="copyright">© 2025 DEMOWALL. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">GitHub</a>
+        <a href="#">Dribbble</a>
+        <a href="#">Behance</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/theme-switcher.js"></script>
+  <script src="js/background-effects.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>

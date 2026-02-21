@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body { margin: 20px; font-family: monospace; }
+.test-container { position: relative; background: #f0f0f0; padding: 20px; margin: 20px 0; }
+.content-area { position: relative; background: #ddd; padding: 20px; }
+.dropdown { position: absolute; top: 60px; left: 20px; background: white; border: 2px solid red; padding: 20px; width: 200px; }
+.result { margin: 10px 0; padding: 10px; border: 1px solid #333; }
+</style>
+</head>
+<body>
+<h1>Z-Index 测试</h1>
+
+<div class="test-container">
+  <h3>测试1: 无 z-index</h3>
+  <div class="content-area">内容区域</div>
+  <div class="dropdown">下拉框（应该可见）</div>
+</div>
+
+<div class="test-container">
+  <h3>测试2: content z-index: 1</h3>
+  <div class="content-area" style="z-index: 1;">内容区域 (z-index: 1)</div>
+  <div class="dropdown">下拉框（会被遮挡）</div>
+</div>
+
+<div class="test-container">
+  <h3>测试3: dropdown z-index: 100</h3>
+  <div class="content-area" style="z-index: 1;">内容区域 (z-index: 1)</div>
+  <div class="dropdown" style="z-index: 100;">下拉框 (z-index: 100，应该可见)</div>
+</div>
+
+<div class="result">
+  <strong>当前页面测试：</strong><br>
+  打开 http://localhost:8000 并按 F12<br>
+  在控制台运行：<br>
+  <code>
+  document.querySelectorAll('.filter-dropdown, .controls, .hero-content').forEach(el => {
+    const style = window.getComputedStyle(el);
+    console.log(el.className, 'z-index:', style.zIndex, 'position:', style.position);
+  });
+  </code>
+</div>
+</body>
+</html>

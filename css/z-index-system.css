@@ -1,0 +1,80 @@
+/* ===================================
+   Z-INDEX LAYER SYSTEM
+   Critical: DO NOT modify without reading BUGS.md
+   =================================== */
+
+/*
+  Layer hierarchy (NEVER change):
+  -1: Background effects (grid, particles, orbs, etc.)
+  0/auto: Content (hero, controls, projects)
+  100: Navigation & Dropdowns (header, filter-dropdown)
+  1000: Theme switcher
+  9999: Noise overlay
+*/
+
+/* Ensure dropdowns are ALWAYS above content */
+.filter-dropdown {
+  z-index: 100 !important;
+  position: absolute !important;
+}
+
+.filter-group {
+  position: relative !important;
+  z-index: 50 !important;
+}
+
+/* Controls section must be above projects section */
+.controls {
+  position: relative !important;
+  z-index: 50 !important;
+}
+
+.site-header {
+  z-index: 100 !important;
+}
+
+/* Force all content areas to NOT create stacking context */
+.hero,
+.hero *,
+.controls > *:not(.controls-inner),
+.controls-inner > *:not(.filter-groups),
+.filter-groups > *:not(.filter-group),
+.projects-section,
+.projects-section * {
+  z-index: auto !important;
+}
+
+/* Theme-specific overrides must respect z-index hierarchy */
+[data-theme] .filter-dropdown {
+  z-index: 100 !important;
+}
+
+[data-theme] .site-header {
+  z-index: 100 !important;
+}
+
+/* Prevent any theme from creating stacking context that blocks dropdowns */
+[data-theme] .hero,
+[data-theme] .hero *,
+[data-theme] .controls > *:not(.controls-inner),
+[data-theme] .controls-inner > *:not(.filter-groups),
+[data-theme] .filter-groups > *:not(.filter-group),
+[data-theme] .projects-section,
+[data-theme] .projects-section *,
+[data-theme] .site-footer {
+  z-index: auto !important;
+  /* Allow relative positioning but prevent stacking context */
+}
+
+/* Theme switcher must be above dropdowns */
+[data-theme] .theme-switcher {
+  z-index: 1000 !important;
+}
+
+[data-theme] .theme-toggle {
+  z-index: 1000 !important;
+}
+
+[data-theme] .theme-menu {
+  z-index: 1001 !important;
+}

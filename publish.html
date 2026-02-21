@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>发布作品 · DEMOWALL</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/publish.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">◈</span>
+        <span class="logo-text">DEMOWALL</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">作品</a>
+        <span id="userInfo" class="user-info"></span>
+        <button id="logoutBtn" class="btn-logout">退出</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="publish-container">
+    <h1 class="publish-title">发布作品</h1>
+    <form id="publishForm" class="publish-form">
+      <div class="form-group">
+        <label for="title">作品标题 *</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">作品描述</label>
+        <textarea id="description" name="description" rows="4"></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="category">分类 *</label>
+          <select id="category" name="category" required>
+            <option value="">选择分类</option>
+            <option value="品牌设计">品牌设计</option>
+            <option value="UI设计">UI设计</option>
+            <option value="网页设计">网页设计</option>
+            <option value="插画">插画</option>
+            <option value="动效设计">动效设计</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tools">使用工具</label>
+          <input type="text" id="tools" name="tools" placeholder="如: Figma, Photoshop">
+        </div>
+
+        <div class="form-group">
+          <label for="year">年份</label>
+          <input type="number" id="year" name="year" min="2000" max="2030" value="2025">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="image">作品图片</label>
+        <input type="file" id="image" name="image" accept="image/*">
+        <div id="imagePreview" class="image-preview"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="status">发布状态</label>
+        <select id="status" name="status">
+          <option value="draft">草稿</option>
+          <option value="published">发布</option>
+        </select>
+      </div>
+
+      <div id="errorMsg" class="error-msg"></div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-secondary" onclick="history.back()">取消</button>
+        <button type="submit" class="btn-primary">发布作品</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/publish.js"></script>
+</body>
+</html>

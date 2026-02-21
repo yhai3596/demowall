@@ -1,0 +1,10 @@
+
+> demowall-backend@1.0.0 start
+> node server.js
+
+
+🚀 Demowall Backend Server
+📡 API: http://localhost:3000/api
+👤 Admin: admin / admin123
+
+✓ Admin user initialized

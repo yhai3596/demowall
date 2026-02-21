@@ -1,0 +1,404 @@
+/* ===================================
+   THEME: Pixel Art (像素风格)
+   Modern Pixel + Soft Gradients
+   Inspired by contemporary pixel art aesthetics
+   =================================== */
+
+[data-theme="pixel"] {
+  /* Soft modern palette */
+  --color-bg: #0f0f1e;
+  --color-bg-elevated: #1a1a2e;
+  --color-surface: #252538;
+  --color-surface-hover: #2f2f48;
+  --color-border: rgba(139, 148, 255, 0.2);
+  --color-border-bright: rgba(139, 148, 255, 0.4);
+
+  --color-text: #e8e8ff;
+  --color-text-secondary: #c8c8e8;
+  --color-text-muted: #8888b8;
+
+  --color-primary: #8b94ff;
+  --color-primary-hover: #a8b0ff;
+  --color-accent: #ff8b94;
+  --color-accent-cyan: #8bfff7;
+  --color-accent-yellow: #fff78b;
+}
+
+/* Pixel grid with glow */
+[data-theme="pixel"] body {
+  background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0f0f1e 100%);
+  image-rendering: pixelated;
+}
+
+[data-theme="pixel"] .grid-background {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 15px,
+      rgba(139, 148, 255, 0.08) 15px,
+      rgba(139, 148, 255, 0.08) 16px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 15px,
+      rgba(139, 148, 255, 0.08) 15px,
+      rgba(139, 148, 255, 0.08) 16px
+    );
+  animation: pixelScroll 30s linear infinite;
+}
+
+[data-theme="pixel"] .grid-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 40%,
+    rgba(139, 148, 255, 0.05) 0%,
+    transparent 50%
+  );
+}
+
+@keyframes pixelScroll {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(16px, 16px); }
+}
+
+/* Pixelated orbs with soft glow */
+[data-theme="pixel"] .orb-1 {
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(139, 148, 255, 0.3) 0%, transparent 70%);
+  filter: blur(60px);
+  clip-path: polygon(
+    0% 20%, 20% 20%, 20% 0%, 80% 0%, 80% 20%, 100% 20%,
+    100% 80%, 80% 80%, 80% 100%, 20% 100%, 20% 80%, 0% 80%
+  );
+  animation: pixelFloat 8s ease-in-out infinite;
+}
+
+[data-theme="pixel"] .orb-2 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 139, 148, 0.25) 0%, transparent 70%);
+  filter: blur(60px);
+  clip-path: polygon(
+    0% 25%, 25% 25%, 25% 0%, 75% 0%, 75% 25%, 100% 25%,
+    100% 75%, 75% 75%, 75% 100%, 25% 100%, 25% 75%, 0% 75%
+  );
+  animation: pixelFloat 10s ease-in-out infinite reverse;
+}
+
+[data-theme="pixel"] .orb-3 {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(139, 255, 247, 0.2) 0%, transparent 70%);
+  filter: blur(60px);
+  clip-path: polygon(
+    0% 30%, 30% 30%, 30% 0%, 70% 0%, 70% 30%, 100% 30%,
+    100% 70%, 70% 70%, 70% 100%, 30% 100%, 30% 70%, 0% 70%
+  );
+  animation: pixelFloat 12s ease-in-out infinite;
+}
+
+@keyframes pixelFloat {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(20px, -15px) rotate(5deg);
+  }
+  66% {
+    transform: translate(-15px, 20px) rotate(-5deg);
+  }
+}
+
+[data-theme="pixel"] .particle {
+  width: 6px;
+  height: 6px;
+  background: #8b94ff;
+  border-radius: 0;
+  box-shadow: 0 0 8px rgba(139, 148, 255, 0.8);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+}
+
+[data-theme="pixel"] .scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(139, 148, 255, 0.02) 0px,
+    transparent 1px,
+    transparent 2px,
+    rgba(139, 148, 255, 0.02) 3px
+  );
+  opacity: 1;
+}
+
+/* Header - Modern pixel UI */
+[data-theme="pixel"] .site-header {
+  background: rgba(26, 26, 46, 0.9);
+  border-bottom: 2px solid rgba(139, 148, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme="pixel"] .logo {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  background: linear-gradient(135deg, #8b94ff 0%, #ff8b94 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(139, 148, 255, 0.5));
+}
+
+[data-theme="pixel"] .logo-mark {
+  background: linear-gradient(135deg, #8bfff7 0%, #8b94ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="pixel"] .nav-link {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+[data-theme="pixel"] .nav-link::after {
+  background: linear-gradient(90deg, #8b94ff, #ff8b94);
+  height: 2px;
+}
+
+/* Hero - Pixel art style */
+[data-theme="pixel"] .hero {
+  background: linear-gradient(180deg, rgba(26, 26, 46, 0.6) 0%, rgba(15, 15, 30, 0.8) 100%);
+  position: relative;
+}
+
+[data-theme="pixel"] .hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(139, 148, 255, 0.02) 20px,
+      rgba(139, 148, 255, 0.02) 21px
+    );
+  pointer-events: none;
+}
+
+[data-theme="pixel"] .hero-label {
+  font-family: 'Courier New', monospace;
+  color: #8bfff7;
+  text-shadow: 0 0 10px rgba(139, 255, 247, 0.6);
+}
+
+[data-theme="pixel"] .hero-title {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  background: linear-gradient(180deg, #e8e8ff 0%, #8b94ff 50%, #ff8b94 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 20px rgba(139, 148, 255, 0.4));
+  animation: pixelPulse 3s ease-in-out infinite;
+}
+
+@keyframes pixelPulse {
+  0%, 100% {
+    filter: drop-shadow(0 4px 20px rgba(139, 148, 255, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 4px 30px rgba(139, 148, 255, 0.6)) drop-shadow(0 0 40px rgba(255, 139, 148, 0.3));
+  }
+}
+
+[data-theme="pixel"] .hero-subtitle {
+  font-family: 'Courier New', monospace;
+  color: #c8c8e8;
+}
+
+/* Controls - Soft pixel UI */
+[data-theme="pixel"] .controls {
+  background: rgba(26, 26, 46, 0.8);
+  border-bottom: 2px solid rgba(139, 148, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme="pixel"] .search-input,
+[data-theme="pixel"] .filter-toggle {
+  background: rgba(37, 37, 56, 0.8);
+  border: 2px solid rgba(139, 148, 255, 0.3);
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+}
+
+[data-theme="pixel"] .search-input:focus {
+  border-color: #8b94ff;
+  box-shadow: 0 0 0 3px rgba(139, 148, 255, 0.2), 0 0 20px rgba(139, 148, 255, 0.3);
+}
+
+[data-theme="pixel"] .filter-toggle:hover,
+[data-theme="pixel"] .filter-toggle.active {
+  background: rgba(139, 148, 255, 0.2);
+  border-color: #8b94ff;
+  box-shadow: 0 0 15px rgba(139, 148, 255, 0.3);
+}
+
+[data-theme="pixel"] .filter-dropdown {
+  background: rgba(37, 37, 56, 0.95);
+  border: 2px solid rgba(139, 148, 255, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(139, 148, 255, 0.1);
+}
+
+[data-theme="pixel"] .filter-option {
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+}
+
+[data-theme="pixel"] .filter-option:hover {
+  background: rgba(139, 148, 255, 0.15);
+}
+
+[data-theme="pixel"] .filter-option.active {
+  background: rgba(139, 148, 255, 0.25);
+  border: 1px solid rgba(139, 148, 255, 0.4);
+  box-shadow: 0 0 10px rgba(139, 148, 255, 0.3);
+}
+
+/* Projects - Modern pixel cards */
+[data-theme="pixel"] .projects-section {
+  background: transparent;
+}
+
+[data-theme="pixel"] .project-card {
+  background: rgba(37, 37, 56, 0.6);
+  border: 2px solid rgba(139, 148, 255, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+[data-theme="pixel"] .project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(139, 148, 255, 0.5);
+  box-shadow: 0 12px 40px rgba(139, 148, 255, 0.3), 0 0 0 1px rgba(139, 148, 255, 0.2);
+}
+
+[data-theme="pixel"] .project-card-image {
+  border-radius: 16px 16px 0 0;
+}
+
+[data-theme="pixel"] .project-card-image .placeholder {
+  background: linear-gradient(135deg, #8b94ff 0%, #ff8b94 50%, #8bfff7 100%);
+  color: #0f0f1e;
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="pixel"] .project-card-overlay {
+  background: linear-gradient(180deg, transparent 0%, rgba(15, 15, 30, 0.95) 100%);
+}
+
+[data-theme="pixel"] .project-card-cta {
+  background: linear-gradient(135deg, #8b94ff 0%, #ff8b94 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 15px rgba(139, 148, 255, 0.4);
+}
+
+[data-theme="pixel"] .project-card-category {
+  font-family: 'Courier New', monospace;
+  color: #8bfff7;
+  text-shadow: 0 0 10px rgba(139, 255, 247, 0.5);
+}
+
+[data-theme="pixel"] .project-card-title {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  color: #e8e8ff;
+}
+
+[data-theme="pixel"] .project-card-tag {
+  background: rgba(139, 148, 255, 0.15);
+  border: 1px solid rgba(139, 148, 255, 0.3);
+  border-radius: 8px;
+  color: #c8c8e8;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+[data-theme="pixel"] .project-card:hover .project-card-tag {
+  background: rgba(139, 148, 255, 0.25);
+  border-color: rgba(139, 148, 255, 0.5);
+  box-shadow: 0 0 10px rgba(139, 148, 255, 0.3);
+}
+
+/* Footer */
+[data-theme="pixel"] .site-footer {
+  background: rgba(15, 15, 30, 0.9);
+  border-top: 2px solid rgba(139, 148, 255, 0.2);
+}
+
+[data-theme="pixel"] .copyright,
+[data-theme="pixel"] .footer-links a {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+}
+
+[data-theme="pixel"] .footer-links a:hover {
+  color: #8b94ff;
+  text-shadow: 0 0 10px rgba(139, 148, 255, 0.6);
+}
+
+/* Theme switcher */
+[data-theme="pixel"] .theme-toggle {
+  background: rgba(37, 37, 56, 0.9);
+  border: 2px solid rgba(139, 148, 255, 0.3);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(139, 148, 255, 0.3);
+}
+
+[data-theme="pixel"] .theme-toggle:hover {
+  background: rgba(139, 148, 255, 0.3);
+  border-color: #8b94ff;
+  box-shadow: 0 6px 30px rgba(139, 148, 255, 0.5);
+}
+
+[data-theme="pixel"] .theme-menu {
+  background: rgba(37, 37, 56, 0.95);
+  border: 2px solid rgba(139, 148, 255, 0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(139, 148, 255, 0.1);
+}
+
+[data-theme="pixel"] .theme-option {
+  border-radius: 12px;
+  font-family: 'Courier New', monospace;
+}
+
+[data-theme="pixel"] .theme-option:hover {
+  background: rgba(139, 148, 255, 0.15);
+}
+
+[data-theme="pixel"] .theme-option.active {
+  background: rgba(139, 148, 255, 0.25);
+  border: 1px solid rgba(139, 148, 255, 0.4);
+  box-shadow: 0 0 15px rgba(139, 148, 255, 0.4);
+}

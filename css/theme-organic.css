@@ -1,0 +1,349 @@
+/* ===================================
+   THEME: Organic (自然有机风)
+   Nature-inspired + Soft curves
+   =================================== */
+
+[data-theme="organic"] {
+  --color-bg: #0f1410;
+  --color-bg-elevated: #1a2318;
+  --color-surface: #243020;
+  --color-surface-hover: #2d3d28;
+  --color-border: rgba(106, 168, 79, 0.2);
+  --color-border-bright: rgba(106, 168, 79, 0.4);
+
+  --color-text: #e8f5e1;
+  --color-text-secondary: #c5e1b8;
+  --color-text-muted: #8fb878;
+
+  --color-primary: #6aa84f;
+  --color-primary-hover: #7bc05f;
+  --color-accent: #93c47d;
+}
+
+/* Custom background - Organic patterns */
+[data-theme="organic"] body {
+  background: radial-gradient(circle at 20% 50%, #1a2318 0%, #0f1410 100%);
+}
+
+[data-theme="organic"] .grid-background {
+  background: none;
+}
+
+[data-theme="organic"] .grid-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(106, 168, 79, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(147, 196, 125, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(118, 168, 93, 0.03) 0%, transparent 50%);
+  animation: organicPulse 20s ease-in-out infinite;
+}
+
+@keyframes organicPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+[data-theme="organic"] .orb-1 {
+  background: radial-gradient(ellipse at center, rgba(106, 168, 79, 0.4) 0%, transparent 70%);
+  filter: blur(150px);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: organicMorph 15s ease-in-out infinite;
+}
+
+[data-theme="organic"] .orb-2 {
+  background: radial-gradient(ellipse at center, rgba(147, 196, 125, 0.3) 0%, transparent 70%);
+  filter: blur(150px);
+  border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  animation: organicMorph 18s ease-in-out infinite reverse;
+}
+
+[data-theme="organic"] .orb-3 {
+  background: radial-gradient(ellipse at center, rgba(118, 168, 93, 0.3) 0%, transparent 70%);
+  filter: blur(130px);
+  border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+  animation: organicMorph 20s ease-in-out infinite;
+}
+
+@keyframes organicMorph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: translate(20px, -20px) rotate(90deg);
+  }
+  50% {
+    border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+    transform: translate(-20px, 20px) rotate(180deg);
+  }
+  75% {
+    border-radius: 70% 30% 40% 60% / 40% 70% 30% 60%;
+    transform: translate(20px, 20px) rotate(270deg);
+  }
+}
+
+[data-theme="organic"] .particle {
+  background: rgba(106, 168, 79, 0.7);
+  box-shadow: 0 0 12px rgba(106, 168, 79, 0.9);
+  border-radius: 50%;
+  animation: particleFloat var(--duration) ease-in-out infinite;
+}
+
+[data-theme="organic"] .glow-line {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(106, 168, 79, 0.6) 50%,
+    transparent 100%
+  );
+  box-shadow: 0 0 15px rgba(106, 168, 79, 0.7);
+  height: 1px;
+  opacity: 0.6;
+}
+
+/* Header - Organic style */
+[data-theme="organic"] .site-header {
+  background: rgba(26, 35, 24, 0.85);
+  border-bottom: 1px solid rgba(106, 168, 79, 0.2);
+  backdrop-filter: blur(20px);
+}
+
+[data-theme="organic"] .logo {
+  font-family: 'Georgia', serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+[data-theme="organic"] .logo-mark {
+  color: #93c47d;
+  filter: drop-shadow(0 0 8px rgba(147, 196, 125, 0.6));
+}
+
+[data-theme="organic"] .nav-link {
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+[data-theme="organic"] .nav-link::after {
+  background: linear-gradient(90deg, #6aa84f, #93c47d);
+  height: 2px;
+  border-radius: 2px;
+}
+
+/* Hero - Soft and natural */
+[data-theme="organic"] .hero {
+  background: linear-gradient(180deg, rgba(26, 35, 24, 0.6) 0%, rgba(15, 20, 16, 0.8) 100%);
+  border-radius: 0 0 60px 60px;
+}
+
+[data-theme="organic"] .hero-label {
+  color: #93c47d;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0.1em;
+}
+
+[data-theme="organic"] .hero-title {
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  background: linear-gradient(135deg, #e8f5e1 0%, #93c47d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 20px rgba(106, 168, 79, 0.3));
+}
+
+[data-theme="organic"] .hero-subtitle {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  color: #c5e1b8;
+}
+
+/* Controls - Rounded organic shapes */
+[data-theme="organic"] .controls {
+  background: rgba(26, 35, 24, 0.6);
+  border-bottom: 1px solid rgba(106, 168, 79, 0.2);
+  backdrop-filter: blur(20px);
+}
+
+[data-theme="organic"] .search-input,
+[data-theme="organic"] .filter-toggle {
+  background: rgba(36, 48, 32, 0.6);
+  border: 1px solid rgba(106, 168, 79, 0.3);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+}
+
+[data-theme="organic"] .search-input:focus {
+  border-color: #6aa84f;
+  box-shadow: 0 0 0 3px rgba(106, 168, 79, 0.15);
+}
+
+[data-theme="organic"] .filter-toggle:hover,
+[data-theme="organic"] .filter-toggle.active {
+  background: rgba(106, 168, 79, 0.2);
+  border-color: #6aa84f;
+}
+
+[data-theme="organic"] .filter-dropdown {
+  background: rgba(36, 48, 32, 0.95);
+  border: 1px solid rgba(106, 168, 79, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="organic"] .filter-option {
+  border-radius: 16px;
+}
+
+[data-theme="organic"] .filter-option:hover {
+  background: rgba(106, 168, 79, 0.15);
+}
+
+[data-theme="organic"] .filter-option.active {
+  background: rgba(106, 168, 79, 0.25);
+  border: 1px solid rgba(106, 168, 79, 0.4);
+}
+
+/* Projects - Organic cards */
+[data-theme="organic"] .projects-section {
+  background: transparent;
+}
+
+[data-theme="organic"] .project-card {
+  background: rgba(36, 48, 32, 0.4);
+  border: 1px solid rgba(106, 168, 79, 0.2);
+  border-radius: 32px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="organic"] .project-card:hover {
+  border-color: rgba(106, 168, 79, 0.5);
+  box-shadow: 0 20px 60px rgba(106, 168, 79, 0.2);
+  transform: translateY(-8px) scale(1.02);
+}
+
+[data-theme="organic"] .project-card-image {
+  border-radius: 32px 32px 0 0;
+}
+
+[data-theme="organic"] .project-card-image .placeholder {
+  background: linear-gradient(135deg, #6aa84f 0%, #93c47d 100%);
+  color: #0f1410;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+}
+
+[data-theme="organic"] .project-card-overlay {
+  background: linear-gradient(180deg, transparent 0%, rgba(15, 20, 16, 0.9) 100%);
+}
+
+[data-theme="organic"] .project-card-cta {
+  background: rgba(106, 168, 79, 0.9);
+  border: 1px solid #6aa84f;
+  border-radius: 20px;
+  color: #0f1410;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+[data-theme="organic"] .project-card-category {
+  color: #93c47d;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0.05em;
+}
+
+[data-theme="organic"] .project-card-title {
+  font-family: 'Georgia', serif;
+  color: #e8f5e1;
+}
+
+[data-theme="organic"] .project-card-tag {
+  background: rgba(106, 168, 79, 0.15);
+  border: 1px solid rgba(106, 168, 79, 0.3);
+  border-radius: 16px;
+  color: #c5e1b8;
+}
+
+[data-theme="organic"] .project-card:hover .project-card-tag {
+  background: rgba(106, 168, 79, 0.25);
+  border-color: rgba(106, 168, 79, 0.5);
+}
+
+/* Footer */
+[data-theme="organic"] .site-footer {
+  background: rgba(15, 20, 16, 0.9);
+  border-top: 1px solid rgba(106, 168, 79, 0.2);
+  border-radius: 60px 60px 0 0;
+}
+
+[data-theme="organic"] .copyright {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+}
+
+[data-theme="organic"] .footer-links a {
+  font-family: 'Georgia', serif;
+}
+
+[data-theme="organic"] .footer-links a:hover {
+  color: #93c47d;
+}
+
+/* Theme switcher */
+[data-theme="organic"] .theme-toggle {
+  background: rgba(36, 48, 32, 0.8);
+  border: 1px solid rgba(106, 168, 79, 0.3);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(106, 168, 79, 0.2);
+}
+
+[data-theme="organic"] .theme-toggle:hover {
+  background: rgba(106, 168, 79, 0.3);
+  border-color: #6aa84f;
+  box-shadow: 0 6px 30px rgba(106, 168, 79, 0.4);
+}
+
+[data-theme="organic"] .theme-menu {
+  background: rgba(36, 48, 32, 0.95);
+  border: 1px solid rgba(106, 168, 79, 0.3);
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="organic"] .theme-option {
+  border-radius: 18px;
+}
+
+[data-theme="organic"] .theme-option:hover {
+  background: rgba(106, 168, 79, 0.15);
+}
+
+[data-theme="organic"] .theme-option.active {
+  background: rgba(106, 168, 79, 0.25);
+  border: 1px solid rgba(106, 168, 79, 0.4);
+}
+
+/* Smooth transitions */
+[data-theme="organic"] * {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

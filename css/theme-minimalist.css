@@ -1,0 +1,261 @@
+/* ===================================
+   THEME: Minimalist (极简主义)
+   Brutalist + Swiss Design
+   =================================== */
+
+[data-theme="minimalist"] {
+  --color-bg: #ffffff;
+  --color-bg-elevated: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f5f5f5;
+  --color-border: #000000;
+  --color-border-bright: #000000;
+
+  --color-text: #000000;
+  --color-text-secondary: #000000;
+  --color-text-muted: #666666;
+
+  --color-primary: #000000;
+  --color-primary-hover: #333333;
+  --color-accent: #000000;
+}
+
+/* Hide all background effects */
+[data-theme="minimalist"] .noise-overlay,
+[data-theme="minimalist"] .grid-background,
+[data-theme="minimalist"] .particles-container,
+[data-theme="minimalist"] .orb,
+[data-theme="minimalist"] .scanlines,
+[data-theme="minimalist"] .glow-lines,
+[data-theme="minimalist"] .spotlight {
+  display: none;
+}
+
+/* Header - Brutalist style */
+[data-theme="minimalist"] .site-header {
+  background: #ffffff;
+  border-bottom: 3px solid #000000;
+  backdrop-filter: none;
+}
+
+[data-theme="minimalist"] .logo {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+[data-theme="minimalist"] .logo-mark {
+  display: none;
+}
+
+[data-theme="minimalist"] .nav-link {
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+[data-theme="minimalist"] .nav-link::after {
+  background: #000000;
+  height: 3px;
+}
+
+/* Hero - Bold typography */
+[data-theme="minimalist"] .hero {
+  background: #ffffff;
+  padding: 8rem 5% 4rem;
+}
+
+[data-theme="minimalist"] .hero-label {
+  display: none;
+}
+
+[data-theme="minimalist"] .hero-title {
+  font-family: 'Arial Black', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 10vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  background: none;
+  -webkit-text-fill-color: inherit;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+[data-theme="minimalist"] .hero-subtitle {
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: 2rem;
+}
+
+/* Controls - Grid layout */
+[data-theme="minimalist"] .controls {
+  background: #ffffff;
+  border-bottom: 3px solid #000000;
+  border-top: 3px solid #000000;
+}
+
+[data-theme="minimalist"] .search-input,
+[data-theme="minimalist"] .filter-toggle {
+  border: 2px solid #000000;
+  border-radius: 0;
+  background: #ffffff;
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+}
+
+[data-theme="minimalist"] .search-input:focus {
+  box-shadow: 4px 4px 0 #000000;
+  border-color: #000000;
+}
+
+[data-theme="minimalist"] .filter-toggle:hover,
+[data-theme="minimalist"] .filter-toggle.active {
+  background: #000000;
+  color: #ffffff;
+}
+
+[data-theme="minimalist"] .filter-dropdown {
+  border: 2px solid #000000;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: 6px 6px 0 #000000;
+}
+
+[data-theme="minimalist"] .filter-option:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+[data-theme="minimalist"] .filter-option.active {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Projects - Brutalist cards */
+[data-theme="minimalist"] .projects-section {
+  background: #ffffff;
+}
+
+[data-theme="minimalist"] .projects-grid {
+  gap: 3rem;
+}
+
+[data-theme="minimalist"] .project-card {
+  border: 3px solid #000000;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
+  transition: all 0.2s ease;
+}
+
+[data-theme="minimalist"] .project-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 #000000;
+}
+
+[data-theme="minimalist"] .project-card-image {
+  border-bottom: 3px solid #000000;
+}
+
+[data-theme="minimalist"] .project-card-image .placeholder {
+  background: #000000;
+  color: #ffffff;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 4rem;
+}
+
+[data-theme="minimalist"] .project-card-overlay {
+  display: none;
+}
+
+[data-theme="minimalist"] .project-card-cta {
+  display: none;
+}
+
+[data-theme="minimalist"] .project-card-category {
+  font-family: 'Courier New', monospace;
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+
+[data-theme="minimalist"] .project-card-title {
+  font-family: 'Arial Black', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+
+[data-theme="minimalist"] .project-card-tag {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+/* Footer */
+[data-theme="minimalist"] .site-footer {
+  background: #000000;
+  color: #ffffff;
+  border-top: none;
+}
+
+[data-theme="minimalist"] .copyright,
+[data-theme="minimalist"] .footer-links a {
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+[data-theme="minimalist"] .footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Theme switcher */
+[data-theme="minimalist"] .theme-toggle {
+  border: 3px solid #000000;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: 4px 4px 0 #000000;
+}
+
+[data-theme="minimalist"] .theme-toggle:hover {
+  background: #000000;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000000;
+}
+
+[data-theme="minimalist"] .theme-toggle:hover svg {
+  color: #ffffff;
+}
+
+[data-theme="minimalist"] .theme-menu {
+  border: 3px solid #000000;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: 6px 6px 0 #000000;
+}
+
+[data-theme="minimalist"] .theme-option:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+[data-theme="minimalist"] .theme-option.active {
+  background: #000000;
+  color: #ffffff;
+}
