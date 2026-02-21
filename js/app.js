@@ -319,7 +319,7 @@
       <article class="project-card" data-id="${project.id}" style="animation-delay: ${index * 0.05}s">
         <a href="detail.html?id=${project.id}" class="project-card-link">
           <div class="project-card-image">
-            ${project.image ? `<img src="${project.image}" alt="${project.title}">` : `<div class="placeholder">${project.title.charAt(0)}</div>`}
+            ${project.image ? `<img src="${project.image}" alt="${project.title}" loading="lazy">` : `<div class="placeholder">${project.title.charAt(0)}</div>`}
             <div class="project-card-overlay"></div>
             <div class="project-card-cta">
               <span class="view-label">查看详情</span>
